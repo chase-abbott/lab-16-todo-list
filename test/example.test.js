@@ -1,18 +1,30 @@
 // IMPORT MODULES under test here:
-// import { example } from '../example.js';
+import { getLoggedIn, isLoggedIn } from '../local-storage.utils.js';
 
 const test = QUnit.test;
 
-test('time to test a function', (expect) => {
-    //Arrange
-    // Set up your arguments and expectations
-    const expected = true;
-    
-    //Act 
-    // Call the function you're testing and set the result to a const
-    const actual = true;
+test('Test getLoggedIn function', (expect) => {
+    const userdata = JSON.stringify('hello');
 
-    //Expect
-    // Make assertions about what is expected versus the actual result
-    expect.equal(actual, expected);
+    localStorage.setItem('LOGGED_IN', userdata);
+
+    const expected = JSON.parse(localStorage.getItem('LOGGED_IN'));
+
+    const actual = getLoggedIn();
+
+    expect.deepEqual(actual, expected);
+});
+
+test('Test isLoggedIn function', (expect) => {
+    const username = 'chase';
+
+    const stringyUser = JSON.stringify(username);
+
+    localStorage.setItem('LOGGED_IN', stringyUser);
+
+    const actual = isLoggedIn('chase');
+
+    const expected = true;
+
+    expect.deepEqual(actual, expected);
 });

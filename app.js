@@ -1,5 +1,5 @@
-// import functions and grab DOM elements
+import { getLoggedIn, setLoggedIn } from "./local-storage.utils.js";
 
-// initialize state
+setLoggedIn('chase');
 
-// set event listeners to update state and DOM
+console.log(getLoggedIn());
