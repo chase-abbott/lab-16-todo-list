@@ -1,5 +1,6 @@
 
 const LOGGED_IN = 'LOGGED_IN';
+const USER = 'USER'
 
 export function setLoggedIn(username) {
     const stringyUsername = JSON.stringify(username);
@@ -16,10 +17,42 @@ export function getLoggedIn() {
     return parsedLogIn;
 }
 
-export function isLoggedIn(username) {
+export function isLoggedIn() {
     const login = getLoggedIn();
 
-    if (login === username) return true;
+    if (login) return true;
+    
+}
 
-    return false;
+export function setUser(user) {
+    const stringyUser = JSON.stringify(user);
+
+    localStorage.setItem(USER, stringyUser)
+}
+
+export function getUser() {
+    const user = localStorage.getItem(USER);
+    const parsedUser = JSON.parse(user);
+
+    if (!parsedUser) return {};
+
+    return parsedUser;
+}
+
+export function usernamePwordMatch(username, password) {
+    const user = getUser();
+
+    if (username === user.username && password === user.password) {
+        return true;
+    }
+}
+
+export function createUser(username, password) {
+    const user = {
+        username, 
+        password,
+        todos: []
+    };
+
+    setUser(user);
 }
