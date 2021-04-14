@@ -21,13 +21,13 @@ export function isLoggedIn() {
     const login = getLoggedIn();
 
     if (login) return true;
-    
+
 }
 
 export function setUser(user) {
     const stringyUser = JSON.stringify(user);
 
-    localStorage.setItem(USER, stringyUser)
+    localStorage.setItem(USER, stringyUser);
 }
 
 export function getUser() {
@@ -49,10 +49,17 @@ export function usernamePwordMatch(username, password) {
 
 export function createUser(username, password) {
     const user = {
-        username, 
+        username,
         password,
         todos: []
     };
 
     setUser(user);
+}
+export function doesUserExist(username) {
+    const user = getUser();
+    if (!user) return false;
+
+    return user.username === username;
+
 }

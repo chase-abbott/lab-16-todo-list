@@ -1,10 +1,10 @@
-import { createUser, isLoggedIn, setLoggedIn } from "./local-storage.utils.js";
+import { createUser, isLoggedIn, setLoggedIn, usernamePwordMatch, doesUserExist, } from "./local-storage.utils.js";
 
 
 
-isLoggedIn()
+isLoggedIn();
 
-const form = document.querySelector('form')
+const form = document.querySelector('form');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -15,15 +15,24 @@ form.addEventListener('submit', (e) => {
 
     console.log(username, password);
 
-    if (usernamePwordMatch(username, password)) {
-        setLoggedIn(username);
-        window.location = './todo';
-        //if they don't match: 
+    if (doesUserExist(username)) {
+
+
+        if (usernamePwordMatch(username, password)) {
+            setLoggedIn(username);
+            window.location = './todo';
+            //if they don't match: 
+        } else {
+            alert('Wrong username or password.');
+            window.location = './todo';
+
+
+        }
     } else {
-        alert('Wrong username or password.') 
+        setLoggedIn(username);
+        createUser(username, password);
         window.location = './todo';
-    
+    }
 
 });
 
-createUser(username, password)
