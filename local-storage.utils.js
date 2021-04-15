@@ -66,9 +66,11 @@ export function doesUserExist(username) {
 
 export function completeTodo(todoMessage) {
     const user = getUser();
+
     const matchingTodo = user.todos.find(todo => todo.todo === todoMessage);
 
     matchingTodo.completed = true;
+
     setUser(user);
 }
 
