@@ -16,17 +16,12 @@ form.addEventListener('submit', (e) => {
     console.log(username, password);
 
     if (doesUserExist(username)) {
-
-
         if (usernamePwordMatch(username, password)) {
             setLoggedIn(username);
             window.location = './todo';
             //if they don't match: 
         } else {
             alert('Wrong username or password.');
-            window.location = './todo';
-
-
         }
     } else {
         setLoggedIn(username);
