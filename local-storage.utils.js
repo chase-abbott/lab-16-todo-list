@@ -34,7 +34,7 @@ export function getUser() {
     const user = localStorage.getItem(USER);
     const parsedUser = JSON.parse(user);
 
-    if (!parsedUser) return {};
+    if (!parsedUser) return [];
 
     return parsedUser;
 }

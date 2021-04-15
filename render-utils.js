@@ -8,6 +8,9 @@ export function renderTodos() {
     user.todos.forEach(todo => {
         const li = document.createElement('li');
         li.textContent = todo.todo;
+        if (todo.completed = true) {
+            li.style.textDecoration = 'line-through';
+        }
         li.addEventListener('click', () => {
             li.style.textDecoration = 'line-through';
             todo.completed = true;
