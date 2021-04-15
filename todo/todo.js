@@ -10,7 +10,7 @@ if (!isLoggedIn(user.username)) {
     window.location = '../';
 }
 
-// renderTodos();
+renderTodos();
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -24,7 +24,7 @@ form.addEventListener('submit', (e) => {
 
     setUser(user);
 
-    // const newli = renderLi(todoMessage);
+    const newli = renderLi(todoObject);
 
     ul.append(newli);
-})
+});
