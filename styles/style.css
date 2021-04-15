@@ -111,7 +111,7 @@ footer {
     }
 
   }
-.todo-list{
+/* .todo-list{
     display: flex;
     background-image: url('../assets/list-bg.png');
     background-repeat: stretch;
@@ -119,7 +119,6 @@ footer {
     margin: 0 auto;
     height: 300px;
     justify-content: center;
-    align-content: center;
+    align-content: center; */
 
 
-}

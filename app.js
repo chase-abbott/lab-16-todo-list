@@ -1,6 +1,7 @@
 import { createUser, isLoggedIn, setLoggedIn, usernamePwordMatch, doesUserExist, } from "./local-storage.utils.js";
 
-
+const errorSpan = document.querySelector('#error-span');
+const button = document.querySelector('#sign-up-button')
 
 if (isLoggedIn()) {
     window.location = './todo';
@@ -23,13 +24,18 @@ form.addEventListener('submit', (e) => {
             window.location = './todo';
             //if they don't match: 
         } else {
-            alert('Wrong username or password.');
-        }
-    } else {
-        setLoggedIn(username);
-        createUser(username, password);
-        window.location = './todo';
-    }
+            errorSpan.textContent = 'Wrong Username or password! If you have not already signed up, do so here:';
+        }}});
 
-});
+        //get rid of this 
+    // } else {
+    //     setLoggedIn(username);
+    //     createUser(username, password);
+    //     window.location = './todo';
+    // }
+
+
+button.addEventListener('click', () => {
+    window.location = './sign-up'
+})
 
