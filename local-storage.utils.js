@@ -66,17 +66,9 @@ export function doesUserExist(username) {
 
 export function completeTodo(todoMessage) {
     const user = getUser();
-    const matchingTodo = user.todos.find(todo => {
-        console.log(todoMessage, todo.todo);
-        todo.todo === todoMessage;
-    });
+    const matchingTodo = user.todos.find(todo => todo.todo === todoMessage);
 
     matchingTodo.completed = true;
     setUser(user);
 }
-
-// export function addTodo(todo) {
-//     const user = getUser();
-
-// }
 
