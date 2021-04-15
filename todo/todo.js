@@ -19,9 +19,8 @@ form.addEventListener('submit', (e) => {
 
     const todoObject = {};
     todoObject.todo = todoMessage;
-    todoObject.completed = false
+    todoObject.completed = false;
     user.todos.push(todoObject);
-
     setUser(user);
 
     const newli = renderLi(todoMessage);
