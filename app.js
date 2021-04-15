@@ -1,6 +1,6 @@
 import { createUser, isLoggedIn, setLoggedIn, usernamePwordMatch, doesUserExist, } from "./local-storage.utils.js";
 
-
+const errorDiv = document.querySelector('#error-div');
 
 if (isLoggedIn()) {
     window.location = './todo';
@@ -23,7 +23,9 @@ form.addEventListener('submit', (e) => {
             window.location = './todo';
             //if they don't match: 
         } else {
-            alert('Wrong username or password.');
+            errorDiv.textContent = 'Wrong Username or password!'
+            const error = new Error('Wrong username or password!');
+            throw error;
         }
     } else {
         setLoggedIn(username);

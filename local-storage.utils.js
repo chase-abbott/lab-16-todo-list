@@ -64,13 +64,27 @@ export function doesUserExist(username) {
 
 }
 
-export function completeTodo(todoMessage) {
+export function completeTodo(todoId) {
     const user = getUser();
 
-    const matchingTodo = user.todos.find(todo => todo.todo === todoMessage);
+    const matchingTodo = user.todos.find(todo => todo.id === todoId);
 
     matchingTodo.completed = true;
 
     setUser(user);
 }
 
+export function addTodo(todoMessage) {
+    const user = getUser();
+    const todoObject = {};
+
+    todoObject.id = Math.floor(Math.random() * 10000000000);
+    todoObject.todo = todoMessage;
+    todoObject.completed = false;
+
+    user.todos.push(todoObject);
+
+    setUser(user);
+
+    return todoObject;
+}
