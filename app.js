@@ -2,7 +2,9 @@ import { createUser, isLoggedIn, setLoggedIn, usernamePwordMatch, doesUserExist,
 
 
 
-isLoggedIn();
+if (isLoggedIn()) {
+    window.location = './todo';
+}
 
 const form = document.querySelector('form');
 
