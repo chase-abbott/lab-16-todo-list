@@ -1,6 +1,6 @@
 
 const LOGGED_IN = 'LOGGED_IN';
-const USER = 'USER'
+const USER = 'USER';
 
 export function setLoggedIn(username) {
     const stringyUsername = JSON.stringify(username);
@@ -64,7 +64,19 @@ export function doesUserExist(username) {
 
 }
 
-export function addTodo(todo) {
+export function completeTodo(todoMessage) {
     const user = getUser();
+    const matchingTodo = user.todos.find(todo => {
+        console.log(todoMessage, todo.todo);
+        todo.todo === todoMessage;
+    });
 
+    matchingTodo.completed = true;
+    setUser(user);
 }
+
+// export function addTodo(todo) {
+//     const user = getUser();
+
+// }
+

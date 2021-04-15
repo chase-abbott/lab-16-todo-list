@@ -23,7 +23,7 @@ form.addEventListener('submit', (e) => {
     user.todos.push(todoObject);
     setUser(user);
 
-    const newli = renderLi(todoMessage);
+    const newli = renderLi(todoObject);
 
     ul.append(newli);
-})
+});
