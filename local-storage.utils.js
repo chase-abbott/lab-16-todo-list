@@ -63,3 +63,8 @@ export function doesUserExist(username) {
     return user.username === username;
 
 }
+
+export function addTodo(todo) {
+    const user = getUser();
+
+}
