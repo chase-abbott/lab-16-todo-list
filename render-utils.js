@@ -7,7 +7,7 @@ export function renderLi(todoObject) {
 
     if (todoObject.completed) {
         li.style.textDecoration = 'line-through';
-    };
+    }
 
     li.addEventListener('click', () => {
         li.style.textDecoration = 'line-through';
@@ -21,8 +21,10 @@ export function renderTodos() {
     const ul = document.querySelector('ul');
 
     ul.textContent = '';
+    const username = localStorage.getItem('LOGGED_IN');
 
-    const user = getUser();
+
+    const user = getUser(username);
 
     user.todos.forEach(todoObject => {
         const li = renderLi(todoObject);
