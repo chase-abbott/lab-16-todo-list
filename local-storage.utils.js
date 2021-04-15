@@ -64,7 +64,8 @@ export function doesUserExist(username) {
 
 }
 
-export function addTodo(todo) {
-    const user = getUser();
+// export function addTodo(todo) {
+//     const user = getUser();
 
 }
+
