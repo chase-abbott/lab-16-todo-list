@@ -30,7 +30,7 @@ export function setUser(user) {
     localStorage.setItem(USER, stringyUser);
 }
 
-export 
+ 
 
 export function getUser() {
     const user = localStorage.getItem(USER);
