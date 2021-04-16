@@ -1,7 +1,6 @@
 import { isLoggedIn, setLoggedIn, usernamePwordMatch, doesUserExist, } from './local-storage.utils.js';
 
 const errorSpan = document.querySelector('#error-span');
-const button = document.querySelector('#sign-up-button');
 
 if (isLoggedIn()) {
     window.location = './todo';
@@ -24,7 +23,8 @@ form.addEventListener('submit', (e) => {
         } else {
             errorSpan.textContent = 'Wrong Username or password! If you have not already signed up, do so here:';
         }
-    }
+        
+    } errorSpan.textContent = 'Username does not exist. Please sign up using the link below.';
 });
 
 //get rid of this 
@@ -34,8 +34,4 @@ form.addEventListener('submit', (e) => {
 //     window.location = './todo';
 // }
 
-
-button.addEventListener('click', () => {
-    window.location = './sign-up';
-});
 
