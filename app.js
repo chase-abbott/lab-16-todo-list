@@ -1,7 +1,7 @@
-import { createUser, isLoggedIn, setLoggedIn, usernamePwordMatch, doesUserExist, } from "./local-storage.utils.js";
+import { isLoggedIn, setLoggedIn, usernamePwordMatch, doesUserExist, } from './local-storage.utils.js';
 
 const errorSpan = document.querySelector('#error-span');
-const button = document.querySelector('#sign-up-button')
+const button = document.querySelector('#sign-up-button');
 
 if (isLoggedIn()) {
     window.location = './todo';
@@ -36,6 +36,6 @@ form.addEventListener('submit', (e) => {
 
 
 button.addEventListener('click', () => {
-    window.location = './sign-up'
-})
+    window.location = './sign-up';
+});
 
