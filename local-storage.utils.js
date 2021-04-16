@@ -31,22 +31,16 @@ export function setUser(user) {
 }
 
 export function getUser() {
-    const username = JSON.parse(localStorage.getItem('LOGGED_IN'));
-    const users = localStorage.getItem(USER);
-    const parsedUsers = JSON.parse(users);
+    const user = localStorage.getItem(USER);
+    const parsedUser = JSON.parse(user);
 
-    if (!parsedUsers) return {};
-    const matchingUser = parsedUsers.find(user => {
-        return user.username === username;
-    });
-    console.log(matchingUser);
-    if (!matchingUser) return {};
+    if (!parsedUser) return [];
 
-    return matchingUser;
+    return parsedUser;
 }
 
 export function usernamePwordMatch(username, password) {
-    const user = getUser(username);
+    const user = getUser();
 
     if (username === user.username && password === user.password) {
         return true;
@@ -54,21 +48,16 @@ export function usernamePwordMatch(username, password) {
 }
 
 export function createUser(username, password) {
-    let localStorageUser = localStorage.getItem(USER);
-    if (!localStorageUser) {
-        localStorageUser = [];
-    }
-
     const user = {
         username,
         password,
         todos: []
     };
-    localStorageUser.push(user);
-    setUser(localStorageUser);
+
+    setUser(user);
 }
 export function doesUserExist(username) {
-    const user = getUser(username);
+    const user = getUser();
     if (!user) return false;
 
     return user.username === username;
@@ -76,7 +65,7 @@ export function doesUserExist(username) {
 }
 
 export function completeTodo(todoId) {
-    const user = getUser(localStorage.getItem('LOGGED_IN'));
+    const user = getUser();
 
     const matchingTodo = user.todos.find(todo => todo.id === todoId);
 
@@ -86,7 +75,7 @@ export function completeTodo(todoId) {
 }
 
 export function addTodo(todoMessage) {
-    const user = getUser(localStorage.getItem('LOGGED_IN'));
+    const user = getUser();
     const todoObject = {};
 
     todoObject.id = Math.floor(Math.random() * 10000000000);
