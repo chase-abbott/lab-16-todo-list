@@ -1,7 +1,7 @@
-import { createUser, isLoggedIn, setLoggedIn, usernamePwordMatch, doesUserExist, } from "./local-storage.utils.js";
+import { isLoggedIn, setLoggedIn, usernamePwordMatch, doesUserExist, } from './local-storage.utils.js';
 
 const errorSpan = document.querySelector('#error-span');
-const button = document.querySelector('#sign-up-button')
+const button = document.querySelector('#sign-up-button');
 
 if (isLoggedIn()) {
     window.location = './todo';
@@ -16,8 +16,6 @@ form.addEventListener('submit', (e) => {
     const username = formData.get('username');
     const password = formData.get('password');
 
-    console.log(username, password);
-
     if (doesUserExist(username)) {
         if (usernamePwordMatch(username, password)) {
             setLoggedIn(username);
@@ -25,17 +23,19 @@ form.addEventListener('submit', (e) => {
             //if they don't match: 
         } else {
             errorSpan.textContent = 'Wrong Username or password! If you have not already signed up, do so here:';
-        }}});
+        }
+    }
+});
 
-        //get rid of this 
-    // } else {
-    //     setLoggedIn(username);
-    //     createUser(username, password);
-    //     window.location = './todo';
-    // }
+//get rid of this 
+// } else {
+//     setLoggedIn(username);
+//     createUser(username, password);
+//     window.location = './todo';
+// }
 
 
 button.addEventListener('click', () => {
-    window.location = './sign-up'
-})
+    window.location = './sign-up';
+});
 

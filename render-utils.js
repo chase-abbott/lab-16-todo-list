@@ -7,7 +7,7 @@ export function renderLi(todoObject) {
 
     if (todoObject.completed) {
         li.style.textDecoration = 'line-through';
-    };
+    }
 
     li.addEventListener('click', () => {
         li.style.textDecoration = 'line-through';

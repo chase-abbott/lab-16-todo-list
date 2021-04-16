@@ -1,4 +1,4 @@
-import { getUser, setUser, isLoggedIn, addTodo } from '../local-storage.utils.js';
+import { getUser, isLoggedIn, addTodo } from '../local-storage.utils.js';
 import { renderTodos, renderLi } from '../render-utils.js';
 
 const form = document.querySelector('form');
@@ -28,4 +28,4 @@ form.addEventListener('submit', (e) => {
 logout.addEventListener('click', () => {
     localStorage.removeItem('LOGGED_IN');
     window.location = '../';
-})
+});
