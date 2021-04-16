@@ -3,3 +3,39 @@ header {
     justify-content: center;
     font-size: 40px;
 }
+
+button:hover {
+    background-color: #E96D63;
+}
+
+button:active {
+    transform: translate3d(5px, 5px, 5px);
+    background-color: #E96D63;
+}
+
+.main-section {
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: #F4BA70;
+
+}
+
+body {
+    background-color: #7FCA9F;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    margin: 10px;
+    width: 100px;
+
+}
+
+.sign-up-background {
+    background-color: #85C1F5;
+}

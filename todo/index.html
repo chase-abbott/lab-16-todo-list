@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href='../styles/todo.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+
     <title>To Do Page</title>
 </head>
 
@@ -15,13 +17,15 @@
         <button id="logout-button">Log Out</button>
     </header>
     <main>
-        <form id="todo-form">
-            <label>
-                <input type="text" id="todo-input" name="todo">
-            </label>
-            <button id="todo-button">Add To Do</button>
-        </form>
-        <ul></ul>
+        <div class="todo">
+            <form id="todo-form">
+                <label>
+                    <input type="text" id="todo-input" name="todo">
+                </label>
+                <button id="todo-button">Add To Do</button>
+            </form>
+            <ul></ul>
+        </div>
     </main>
     <script type='module' src='./todo.js'></script>
 </body>

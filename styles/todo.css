@@ -1,3 +1,48 @@
+* {
+    font-family: 'Titillium Web', sans-serif;
+}
+
 li {
     cursor: pointer;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    align-self: center;
+
+}
+
+#todo-button {
+    padding-bottom: 5px;
+    padding: 5px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+.todo {
+    border: 1px solid black;
+    width: 300px;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../assets/list-bg.png");
+}
+
+li {
+    list-style-type: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
 }
