@@ -36,10 +36,9 @@ export function getUser() {
     const parsedUsers = JSON.parse(users);
 
     if (!parsedUsers) return {};
-    const matchingUser = parsedUsers.find(user => {
-        return user.username === username;
-    });
-    console.log(matchingUser);
+
+    const matchingUser = parsedUsers.find(user => user.username === username);
+
     if (!matchingUser) return {};
 
     return matchingUser;
@@ -55,6 +54,7 @@ export function usernamePwordMatch(username, password) {
 
 export function createUser(username, password) {
     let localStorageUser = localStorage.getItem(USER);
+
     if (!localStorageUser) {
         localStorageUser = [];
     }
@@ -86,7 +86,8 @@ export function completeTodo(todoId) {
 }
 
 export function addTodo(todoMessage) {
-    const user = getUser(localStorage.getItem('LOGGED_IN'));
+    const user = getUser(JSON.parse(localStorage.getItem('LOGGED_IN')));
+
     const todoObject = {};
 
     todoObject.id = Math.floor(Math.random() * 10000000000);
